@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215073341) do
+ActiveRecord::Schema.define(version: 20150215085744) do
+
+  create_table "categories", force: true do |t|
+    t.string  "name"
+    t.integer "parent_id"
+    t.integer "lft",                        null: false
+    t.integer "rgt",                        null: false
+    t.integer "depth",          default: 0, null: false
+    t.integer "children_count", default: 0, null: false
+  end
 
   create_table "pictures", force: true do |t|
     t.string   "name"
