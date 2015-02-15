@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <nav>
+    <nav class="main-nav">
       <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
       <a href="/">HOME</a>
       <a href="#">CORDE</a>
@@ -18,10 +18,10 @@
         <!-- *_path はUserモデルを作成したときに、
           deviseにより自動で作成されてますので、rake routesで確認できます -->
         Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'EDIT PROFILE', edit_user_registration_path %> |
+        <%= link_to 'EDIT PROFILE', edit_user_registration_path %>
         <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to "SIGNUP", new_user_registration_path %> |
+        <%= link_to "SIGNUP", new_user_registration_path %>
         <%= link_to "LOGIN", new_user_session_path %>
       <% end %>
     </nav>

@@ -6,7 +6,7 @@
 
 %p
   %b Picture:
-  = image_tag @picture.photo.url(:medium)
+  = image_tag @picture.photo.url(:medium), :size => '500x600'
 
 = link_to 'Edit', edit_picture_path(@picture)
 \|

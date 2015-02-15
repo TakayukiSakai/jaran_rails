@@ -1,5 +1,6 @@
-%h1 じゃらん
+%h1{class: :jaran} じゃらん
 %ul
   - for picture in @pictures
     %li{:class => "top-img"}
-      = image_tag picture.photo.url(:medium), :size => '250x300'
+      %a{href: "pictures/#{picture.id}"}
+        = image_tag picture.photo.url(:medium), :size => '250x300'
