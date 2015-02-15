@@ -37,6 +37,7 @@ gem 'therubyracer'
 gem 'unicorn'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails-assets-bootstrap'
+gem 'awesome_nested_set'
 
 group :production do
   gem 'dotenv-rails'

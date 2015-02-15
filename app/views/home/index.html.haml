@@ -1,5 +1,5 @@
 %h1 じゃらん
 %ul
   - for picture in @pictures
-    %li
-      = image_tag picture.photo.url(:medium)
+    %li{:class => "top-img"}
+      = image_tag picture.photo.url(:medium), :size => '250x300'
