@@ -4,6 +4,7 @@
   <title>Jaran</title>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag :application %>
+  <%= stylesheet_link_tag "application" %>
 </head>
 <body>
   <header>
@@ -11,7 +12,7 @@
       <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
       <a href="/">HOME</a>
       <a href="#">CORDE</a>
-      <a href="#">POST</a>
+      <a href="/pictures/new">POST</a>
       <% if user_signed_in? %>
         <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
         <!-- *_path はUserモデルを作成したときに、

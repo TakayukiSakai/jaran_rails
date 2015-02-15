@@ -1,2 +1,5 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%h1 じゃらん
+%ul
+  - for picture in @pictures
+    %li
+      = image_tag picture.photo.url(:medium)
