@@ -1,3 +1,5 @@
+= javascript_include_tag "category/category"
+
 = form_for @picture do |f|
   - if @picture.errors.any?
     #error_explanation
@@ -11,5 +13,15 @@
     = f.text_field :name
   .field
     = f.file_field :photo
+  .field{class: 'root-category'}
+    = f.label '大カテゴリ'
+    %select{onChange: 'changeChildCategory(this)'}
+      %option{disabled: :disabled, selected: :selected} カテゴリを選んでください
+      - for c in Category.roots
+        %option{class: 'root-option', value: c.id}= c.name
+  - for c in Category.roots
+    .field{class: 'child-category', value: c.id}
+      = f.label '詳細カテゴリ'
+      = f.select :category_id, options_for_select(c.children.map{|cc| [cc.name, cc.id]})
   .actions
     = f.submit 'Save'
